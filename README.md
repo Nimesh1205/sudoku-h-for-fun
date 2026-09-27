@@ -1,4 +1,4 @@
-# hsudoku
+# SudokuH
 
 A new Flutter project.
 
