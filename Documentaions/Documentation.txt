@@ -1,0 +1,83 @@
+sudoku_app v1.0.0
+lib/
+├── main.dart
+├── models/
+│   └── sudoku_board.dart
+├── logic/
+│   ├── sudoku_board.dart
+│   └── sudoku_validator.dart
+├── providers/
+│   ├── game_provider.dart
+│   └── theme_provider.dart
+├── screens/
+│   ├── home_screen.dart
+│   ├── game_screen.dart
+│   └── settings_screen.dart
+├── widgets/
+│   ├── sudoku_grid.dart
+│   ├── sudoku_cell.dart
+│   └── number_pad.dart
+└── theme/
+    └── app_theme.dart
+
+
+sudoku_app/
+├── lib/
+│   ├── main.dart                     # App entry point, runApp()
+│   │
+│   ├── models/                       # Pure data classes, no UI/logic mixed in
+│   │   ├── sudoku_cell.dart          # SudokuCell (value, isFixed, candidates)
+│   │   ├── sudoku_board.dart         # SudokuBoard (grid of cells, board-level ops)
+│   │   └── difficulty.dart           # Difficulty enum (easy/medium/hard/expert)
+│   │
+│   ├── logic/                        # Core algorithms, no Flutter imports
+│   │   ├── sudoku_generator.dart     # Generates valid puzzles
+│   │   ├── sudoku_solver.dart        # Backtracking solver, used for hints/validation
+│   │   ├── sudoku_validator.dart     # Row/col/box conflict checking
+│   │   └── difficulty_calculator.dart # Rates puzzle difficulty by clues/technique
+│   │
+│   ├── state/                        # State management (adjust to your choice)
+│   │   ├── game_controller.dart      # Provider/Riverpod/Bloc/Cubit for game state
+│   │   ├── timer_controller.dart     # Timer state
+│   │   └── settings_controller.dart  # Theme, sound, difficulty preference
+│   │
+│   ├── screens/                      # Full-page views
+│   │   ├── home_screen.dart          # Main menu (new game, continue, settings)
+│   │   ├── game_screen.dart          # The actual Sudoku board screen
+│   │   ├── settings_screen.dart
+│   │   └── win_screen.dart           # Completion/celebration screen
+│   │
+│   ├── widgets/                      # Reusable UI pieces
+│   │   ├── sudoku_board_widget.dart  # Renders the 9x9 grid
+│   │   ├── sudoku_cell_widget.dart   # A single tappable cell
+│   │   ├── number_pad.dart           # 1-9 input pad + erase button
+│   │   ├── difficulty_selector.dart
+│   │   └── game_timer_widget.dart
+│   │
+│   ├── services/                     # External-facing helpers
+│   │   ├── storage_service.dart      # Save/load game state (shared_preferences, hive, etc.)
+│   │   └── stats_service.dart        # Win streaks, best times, etc.
+│   │
+│   ├── utils/                        # Small stateless helpers
+│   │   ├── constants.dart            # Grid size, box size, colors, padding values
+│   │   └── extensions.dart           # e.g. List<int> or int extensions
+│   │
+│   └── theme/
+│       └── app_theme.dart            # ThemeData, light/dark mode
+│
+├── test/                             # Mirrors lib/ structure
+│   ├── logic/
+│   │   ├── sudoku_generator_test.dart
+│   │   ├── sudoku_solver_test.dart
+│   │   └── sudoku_validator_test.dart
+│   └── models/
+│       └── sudoku_board_test.dart
+│
+├── assets/
+│   ├── images/
+│   ├── sounds/                       # Optional: tap/win sound effects
+│   └── fonts/
+│
+├── pubspec.yaml
+├── analysis_options.yaml
+└── README.md
