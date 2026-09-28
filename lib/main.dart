@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hsudoku/screens/home_screen.dart';
+import 'package:hsudoku/theme/app_theme.dart';
 
 void main(){
   runApp(const SudokuApp());
@@ -12,6 +13,7 @@ class SudokuApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       home: HomeScreen(),
+      theme: BuildTheme(),
       debugShowCheckedModeBanner: false,
     );
   }
