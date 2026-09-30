@@ -1,3 +1,16 @@
+List<int> boxDimensions(int n){
+    int boxRows=1;
+    int boxCols=n;
+    for(int i=2;i<=n;i++){
+        if(n%i==0){
+            boxRows=i;
+            boxCols=n~/i;
+        }
+        if(boxRows<=boxCols) break;
+    }
+    return [boxRows,boxCols];
+}
+
 //Checking the duplicates in row
 bool rowsValid(List<List<int>> grid, int n){
     for(int i=0;i<n;i++){
@@ -34,33 +47,26 @@ bool colsValid(List<List<int>> grid, int n){
 
 //Checking the duplicates in box
 bool boxesValid(List<List<int>> grid, int n){
-    int boxRows=1;
-    int boxCols=n;
-    for(int i=2;i<=n;i++){
-        if(n%i==0){
-            boxRows=i;
-            boxCols=n~/i;
-        }
-        if(boxRows<=boxCols) break;
-    }
-    
-    for(int startRow=0;startRow<n;startRow+=boxRows){
-        for(int startCol=0;startCol<n;startCol+=boxCols){
+  List<int> dim=boxDimensions(n);
+  int boxRows=dim[0];
+  int boxCols=dim[1];
+  for(int startRow=0;startRow<n;startRow+=boxRows){
+      for(int startCol=0;startCol<n;startCol+=boxCols){
 
-            Set<int> inBox={};
-            for(int i=startRow;i<startRow+boxRows;i++){
-                for(int j=startCol;j<startCol+boxCols;j++){
-                    if(grid[i][j]==0) continue;
-                    if(inBox.contains(grid[i][j])){
-                    return false;
-                    }else{
-                        inBox.add(grid[i][j]);
-                    } 
-                }
-            }
-        }
-    }
-    return true;
+          Set<int> inBox={};
+          for(int i=startRow;i<startRow+boxRows;i++){
+              for(int j=startCol;j<startCol+boxCols;j++){
+                  if(grid[i][j]==0) continue;
+                  if(inBox.contains(grid[i][j])){
+                  return false;
+                  }else{
+                      inBox.add(grid[i][j]);
+                  } 
+              }
+          }
+      }
+  }
+  return true;
 }
 
 bool isValid(List<List<int>> grid){

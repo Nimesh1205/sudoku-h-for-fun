@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hsudoku/screens/loading_screen.dart';
 import 'package:hsudoku/theme/app_theme.dart';
 import 'package:hsudoku/widgets/app_button.dart';
 
@@ -40,7 +41,12 @@ class HomeScreen extends StatelessWidget{
                 AppButton(
                   label:"New Game",
                   color:AppColors.primaryAppColor,
-                  onPressed:(){},
+                  onPressed:(){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const LoadingScreen()),
+                    );
+                  },
                 ),
               ],
             ),
