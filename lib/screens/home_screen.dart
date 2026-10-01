@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget{
     final text=Theme.of(context).textTheme;
 
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.backgroundColor, 
       body: SafeArea(
         child: Padding(
             padding: const EdgeInsets.fromLTRB(space.l, space.xl, space.l, space.xl),

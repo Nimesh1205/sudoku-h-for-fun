@@ -18,11 +18,14 @@ class AppButton extends StatelessWidget{
       return ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
+          shadowColor: AppColors.primaryAppColor,
+          surfaceTintColor: Colors.transparent,
+          splashFactory: NoSplash.splashFactory,
+          overlayColor: Colors.transparent,
           backgroundColor: color,
           foregroundColor: AppColors.backgroundColor,
-          elevation: 3,
+          elevation: 2,
           shape: const StadiumBorder(),
-          shadowColor: AppColors.primaryAppColor,
           padding: const EdgeInsets.symmetric(vertical: space.m),
           textStyle: const TextStyle(
             fontFamily: AppFonts.secondaryFont,

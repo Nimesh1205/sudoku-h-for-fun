@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hsudoku/theme/app_theme.dart';
 
 class LearnScreen extends StatelessWidget {
   const LearnScreen({super.key});
@@ -6,11 +7,8 @@ class LearnScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Learn'),
-      ),
       body: const Center(
-        child: Text('Sudoku learning content coming soon.'),
+        child: Text("Learning Coming Soon...."),
       ),
     );
   }

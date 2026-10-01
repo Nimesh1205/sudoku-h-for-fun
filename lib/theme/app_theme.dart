@@ -24,6 +24,12 @@ abstract final class space{
 }
 
 ThemeData BuildTheme()=> ThemeData(
+  pageTransitionsTheme: const PageTransitionsTheme(
+  builders: {
+      TargetPlatform.android: NoTransitionsBuilder(),
+      TargetPlatform.iOS: NoTransitionsBuilder(),
+    },
+  ),
   useMaterial3: true,
   fontFamily: AppFonts.secondaryFont,
   scaffoldBackgroundColor: AppColors.backgroundColor,
@@ -34,7 +40,10 @@ ThemeData BuildTheme()=> ThemeData(
     headlineLarge: TextStyle(
         fontFamily: AppFonts.primaryFont,
         fontSize: 40, fontWeight: FontWeight.w400, color: AppColors.textColor),
-    
+    headlineMedium: TextStyle(
+        fontFamily: AppFonts.primaryFont,
+        fontSize: 36, fontWeight: FontWeight.w400, color: AppColors.textColor
+    ),
     titleMedium: TextStyle(
         fontSize: 18, fontWeight: FontWeight.w400, color: AppColors.secondaryTextColor),
     bodyMedium: TextStyle(
@@ -43,3 +52,18 @@ ThemeData BuildTheme()=> ThemeData(
         fontSize: 20, fontWeight: FontWeight.w400, color: AppColors.secondaryTextColor),
   ),
 );
+
+class NoTransitionsBuilder extends PageTransitionsBuilder {
+  const NoTransitionsBuilder();
+
+  @override
+  Widget buildTransitions<T>(
+    PageRoute<T> route,
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+    Widget child,
+  ) {
+    return child; // no slide, fade or zoom
+  }
+}
