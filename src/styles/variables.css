@@ -1,0 +1,16 @@
+:root{
+    --primary-font:"MuseoModerno";
+    --secondary-font:"NotoSans";
+
+    --font-weight-light:300;
+    --font-weight-regular:400;
+    --font-weight-medium:500;
+
+    --primary-color:#2879EA;
+    --primary-color-saturated:#2879eaaf;
+    --secondary-color:#8FC93A;
+    --background-color:#F9F9F9;
+    --light-theme-textcolor:#171A21;
+    --dark-theme-textcolor:#F9F9F9;
+    --fade-textcolor:#65686e;
+}
