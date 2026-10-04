@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SudokuH (web)
 
 Pure web version of the Sudoku app (HTML + CSS + JavaScript, built with Vite).
@@ -31,3 +32,6 @@ src/
 - Default grid is 6x6 (2x3 boxes). 4x4 and 9x9 are also supported; change it in Settings.
 - Every puzzle is randomly generated and checked to have exactly one solution.
 - Deploy: upload the `dist/` folder to Netlify, Vercel, Cloudflare Pages or GitHub Pages.
+=======
+# sudoku-h-for-fun
+>>>>>>> e37d4d7f2bc76f6e3a903bf2d0c2187db43525b5
