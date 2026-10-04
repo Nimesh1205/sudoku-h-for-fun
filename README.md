@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # SudokuH (web)
 
 Pure web version of the Sudoku app (HTML + CSS + JavaScript, built with Vite).
