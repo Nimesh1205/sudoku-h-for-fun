@@ -1,4 +1,4 @@
-# SudokuH (web)
+# SudokuH (web) In progress...⏳ 
 
 Pure web version of the Sudoku app (HTML + CSS + JavaScript, built with Vite).
 
